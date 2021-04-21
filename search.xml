@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>css(1)基础选择器权重</title>
+    <url>/2021/04/20/css(1)%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8%E6%9D%83%E9%87%8D/</url>
+    <content><![CDATA[<pre><code>引入css
+</code></pre>
+<p>1.行间样式<br><img src="https://img-blog.csdnimg.cn/2021042023100421.png" alt="&lt;div style=&quot;_
+      width:100px;
+      height:100px;
+      background-color:red;
+_&quot;&gt;&lt;/div&gt;"></p>
+<p>2.页面级css<br><img src="https://img-blog.csdnimg.cn/20210420231118484.png" alt="在这里插入图片描述"></p>
+<p>3.外部css文件   最高大上<br>1.选择器  css如何选择html元素<br><img src="https://img-blog.csdnimg.cn/20210420231302592.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg3MTgzMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>优先级 ！important&gt;行间样式&gt;id&gt;class|属性&gt;标签选择器&gt;通配符&gt;<br>css权重<br>!important               Infinity<br>行间样式                   1000在这里插入图片描述</p>
+<p>id                               100<br>class|属性|伪类             10<br>标签|伪元素                    1<br>通配符                            0</p>
+<p>1000   这是256进制</p>
+<p><img src="https://img-blog.csdnimg.cn/20210420231405865.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg3MTgzMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>复杂选择器<br>权重计算问题<br>css基础属性<br>（7）并列选择器<br><img src="https://img-blog.csdnimg.cn/20210420230927222.png" alt="![在这里插入图片描述])"></p>
+<p>   (8)分组选择器<br>em,strong,span</p>
+<p>css基础属性<br>font-size字体大小(默认字体高度)<br>font-weight字体粗细bolder  bold </p>
+<p>/*颜色的表示方法<br>1.土鳖式（纯英文单词red green white）<br>2.颜色代码<br>color:#ff4400<br>三个两位十六进制数<br>r             g             b<br>00-ff     00-ff       00-ff<br>代表饱和程度</p>
+<p>3.颜色函数<br>color:rgb(0-255,0-255 ,0-255 )</p>
+<p>*/<br> transparent透明色</p>
+]]></content>
+      <categories>
+        <category>-css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css(3)居中五环，两个经典bug，BFC</title>
+    <url>/2021/04/20/css-3-%E5%B1%85%E4%B8%AD%E4%BA%94%E7%8E%AF%EF%BC%8C%E4%B8%A4%E4%B8%AA%E7%BB%8F%E5%85%B8bug%EF%BC%8CBFC/</url>
+    <content><![CDATA[<h2 id="单行文本垂直居中方法："><a href="#单行文本垂直居中方法：" class="headerlink" title="单行文本垂直居中方法："></a>单行文本垂直居中方法：</h2><p>(1)line-height=height<br>  文本高度等于容器高度<br>(2）加peding</p>
+<h2 id="如何首行缩进两个文本的距离"><a href="#如何首行缩进两个文本的距离" class="headerlink" title="如何首行缩进两个文本的距离"></a>如何首行缩进两个文本的距离</h2><p>text-indent首行缩进</p>
+<p>text-indent:2em;</p>
+<p>em： 1em=1*font-size;<br>                   =16px;</p>
+<p><img src="https://img-blog.csdnimg.cn/20210420232736350.png" alt="&lt;del&gt;原价50元&lt;/del&gt;
+&lt;span&gt;原价50元&lt;/span&gt;"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210420232722172.png" alt="在这里插入图片描述"></p>
+<h2 id="可以用其它代替del标签"><a href="#可以用其它代替del标签" class="headerlink" title="可以用其它代替del标签"></a>可以用其它代替del标签</h2><p>span{<br>      text-decoration: line-through;//中划线<br>}</p>
+<p>  text-decoration:none;<br> 告诉浏览器没有线</p>
+<p>下划线<br>span{<br>     text-decoration:underline;//下划线<br>}</p>
+<p>overline上划线</p>
+<h2 id="当鼠标移入的样式"><a href="#当鼠标移入的样式" class="headerlink" title="当鼠标移入的样式"></a>当鼠标移入的样式</h2><p>cursor</p>
+<p>span{<br>      cursor:help;</p>
+<p>}</p>
+<h2 id="元素种类"><a href="#元素种类" class="headerlink" title="元素种类"></a>元素种类</h2><p>1.行级元素<br>feature:内容决定元素所占位置<br>            不可以通过css改变宽高<br>span strong em a del<br>2.块级元素<br> featyre:独占一行<br>             可以通过css改变宽高<br>div   p   ul   li   ol   form   address </p>
+<p>3.行块级元素<br>feature：内容决定大小<br>               可以改变宽高</p>
+<h2 id="bug-相邻的图片之间有缝"><a href="#bug-相邻的图片之间有缝" class="headerlink" title="bug:相邻的图片之间有缝"></a>bug:相邻的图片之间有缝</h2><p><img src="https://img-blog.csdnimg.cn/20210420233145782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg3MTgzMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>因为图片有文字特性，被分隔符分割了。<br>解决（1）：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;img src=&quot;fy.jpg&quot;&gt;&lt;img src=&quot;fy.jpg&quot;&gt;&lt;img src=&quot;fy.jpg&quot;&gt;&lt;img src=&quot;fy.jpg&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>解决（2）：<br>margin  元素和元素之间的空隙<br>img{<br>   margin-left:-6px;</p>
+<p>}<br>(不好)</p>
+<h2 id="怎么让ul的圆点改变"><a href="#怎么让ul的圆点改变" class="headerlink" title="怎么让ul的圆点改变"></a>怎么让ul的圆点改变</h2><p>标签选择器 初始化元素</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">ul</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">li</span>&gt;<span class="number">1</span>&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">   &lt;<span class="selector-tag">li</span>&gt;<span class="number">2</span>&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">   &lt;<span class="selector-tag">li</span>&gt;<span class="number">3</span>&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">ul</span>&gt;   </span><br><span class="line"><span class="selector-tag">ul</span>&#123;</span><br><span class="line">   <span class="attribute">list-style</span>:none;</span><br><span class="line">   <span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line">   <span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="通配符选择器可以初始化所有标签"><a href="#通配符选择器可以初始化所有标签" class="headerlink" title="通配符选择器可以初始化所有标签"></a>通配符选择器可以初始化所有标签</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">   <span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line">   <span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>权重为零。</p>
+<h2 id="盒子模型："><a href="#盒子模型：" class="headerlink" title="盒子模型："></a>盒子模型：</h2><p>margin+border+padding+（content=width+height）<br>外边距             内边距      内容区（宽 高）<br>盒子三大部分   ： 盒子壁  border     内边距 padding    盒子内容width+height</p>
+<h2 id="如何让里面盒子在外面盒子居中？"><a href="#如何让里面盒子在外面盒子居中？" class="headerlink" title="如何让里面盒子在外面盒子居中？"></a>如何让里面盒子在外面盒子居中？</h2><p>两个盒子的内容去一样的<br>外面盒子+padding=内容区</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;div class =&quot;wrapper&quot;&gt;</span><br><span class="line">       &lt;div class =&quot;content&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wrapper</span>&#123;</span><br><span class="line">     <span class="attribute">border</span>:<span class="number">10px</span> solid green;</span><br><span class="line">     <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">     <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">     <span class="attribute">background-color</span>:red;</span><br><span class="line">     <span class="attribute">padding</span>:<span class="number">100px</span>;</span><br><span class="line">  &#125;</span><br><span class="line"> <span class="selector-class">.content</span>&#123;</span><br><span class="line">   <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">   <span class="attribute">background-color</span>:black;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="padding-内边距"><a href="#padding-内边距" class="headerlink" title="padding:内边距"></a>padding:内边距</h2><p>四个值 ：上右下左<br>三个值 ：上（左右）下</p>
+<h2 id="如何做这种效果的盒子"><a href="#如何做这种效果的盒子" class="headerlink" title="如何做这种效果的盒子"></a>如何做这种效果的盒子</h2><p><img src="https://img-blog.csdnimg.cn/20210420233618422.png" alt="在这里插入图片描述"></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">                   &lt;div class=&quot;content1&quot;&gt;&lt;/div&gt;</span><br><span class="line">                &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">         &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content1</span>&#123;</span><br><span class="line">       <span class="attribute">height</span>:<span class="number">10px</span>;</span><br><span class="line">       <span class="attribute">width</span>:<span class="number">10px</span>;</span><br><span class="line">       <span class="attribute">background-color</span>:<span class="number">#0f0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span>&#123;</span><br><span class="line">      <span class="attribute">width</span>:<span class="number">10px</span>;</span><br><span class="line">      <span class="attribute">height</span>:<span class="number">10px</span>;</span><br><span class="line">      <span class="attribute">padding</span>:<span class="number">10px</span>;</span><br><span class="line">      <span class="attribute">background-color</span>:<span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">     <span class="attribute">width</span>:<span class="number">30px</span>;</span><br><span class="line">     <span class="attribute">height</span>:<span class="number">30px</span>;</span><br><span class="line">     <span class="attribute">background-color</span>:<span class="number">#0f0</span>;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wrapper</span>&#123;</span><br><span class="line">     <span class="attribute">width</span>:<span class="number">50px</span>;</span><br><span class="line">      <span class="attribute">height</span>:<span class="number">50px</span>;</span><br><span class="line">      <span class="attribute">background-color</span>:<span class="number">#000</span>;</span><br><span class="line">      <span class="attribute">padding</span>:<span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="定位技术-position"><a href="#定位技术-position" class="headerlink" title="定位技术 position"></a>定位技术 position</h1><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span>&gt;&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">   <span class="attribute">position</span>:absolute;</span><br><span class="line">   <span class="attribute">left</span>:<span class="number">100px</span>;</span><br><span class="line">   <span class="attribute">top</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="body有默认的margin-8px"><a href="#body有默认的margin-8px" class="headerlink" title="body有默认的margin 8px;"></a>body有默认的margin 8px;</h2><p><code>&lt;absolute&gt;</code>（脱离原来的层进入上一层）<br>1.脱离原来位置进行定位<br>最近的有定位的父级(包括父级的父级…..)进行定位<br>如果没有，那么相对于文档进行定位。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;relative&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.保留原来位置进行定位<br>相对自己原来位置定位</p>
+<p> relative 作为参照物<br> absolute 进行定位的</p>
+<h2 id="重点："><a href="#重点：" class="headerlink" title="重点："></a>重点：</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">       &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;box&quot;&gt; &lt;/div&gt;</span><br><span class="line">        &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wrapper</span>&#123;</span><br><span class="line">      <span class="attribute">margin-left</span>:<span class="number">100px</span>;</span><br><span class="line">       <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">       <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">       <span class="attribute">background-color</span>:black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span>&#123;</span><br><span class="line">          <span class="attribute">margin-left</span>:<span class="number">100px</span>;</span><br><span class="line">             <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">             <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">             <span class="attribute">background-color</span>:black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">       <span class="attribute">position</span>:absolute;</span><br><span class="line">       <span class="attribute">left</span>:<span class="number">50px</span>;</span><br><span class="line">        <span class="attribute">width</span>:<span class="number">50px</span>;</span><br><span class="line">        <span class="attribute">height</span>:<span class="number">50px</span>;</span><br><span class="line">        <span class="attribute">background-color</span>:yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>z-index<br>越大离我们越近</p>
+]]></content>
+      <categories>
+        <category>-css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css(2)盒子模型，层模型</title>
+    <url>/2021/04/20/css(2)%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%EF%BC%8C%E5%B1%82%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="单行文本垂直居中方法："><a href="#单行文本垂直居中方法：" class="headerlink" title="单行文本垂直居中方法："></a>单行文本垂直居中方法：</h2><p>(1)line-height=height<br>  文本高度等于容器高度<br>(2）加peding</p>
+<h2 id="如何首行缩进两个文本的距离"><a href="#如何首行缩进两个文本的距离" class="headerlink" title="如何首行缩进两个文本的距离"></a>如何首行缩进两个文本的距离</h2><p>text-indent首行缩进</p>
+<p>text-indent:2em;</p>
+<p>em： 1em=1*font-size;<br>                   =16px;</p>
+<p><img src="https://img-blog.csdnimg.cn/20210420232736350.png" alt="&lt;del&gt;原价50元&lt;/del&gt;
+&lt;span&gt;原价50元&lt;/span&gt;"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210420232722172.png" alt="在这里插入图片描述"></p>
+<h2 id="可以用其它代替del标签"><a href="#可以用其它代替del标签" class="headerlink" title="可以用其它代替del标签"></a>可以用其它代替del标签</h2><p>span{<br>      text-decoration: line-through;//中划线<br>}</p>
+<p>  text-decoration:none;<br> 告诉浏览器没有线</p>
+<p>下划线<br>span{<br>     text-decoration:underline;//下划线<br>}</p>
+<p>overline上划线</p>
+<h2 id="当鼠标移入的样式"><a href="#当鼠标移入的样式" class="headerlink" title="当鼠标移入的样式"></a>当鼠标移入的样式</h2><p>cursor</p>
+<p>span{<br>      cursor:help;</p>
+<p>}</p>
+<h2 id="元素种类"><a href="#元素种类" class="headerlink" title="元素种类"></a>元素种类</h2><p>1.行级元素<br>feature:内容决定元素所占位置<br>            不可以通过css改变宽高<br>span strong em a del<br>2.块级元素<br> featyre:独占一行<br>             可以通过css改变宽高<br>div   p   ul   li   ol   form   address </p>
+<p>3.行块级元素<br>feature：内容决定大小<br>               可以改变宽高</p>
+<h2 id="bug-相邻的图片之间有缝"><a href="#bug-相邻的图片之间有缝" class="headerlink" title="bug:相邻的图片之间有缝"></a>bug:相邻的图片之间有缝</h2><p><img src="https://img-blog.csdnimg.cn/20210420233145782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg3MTgzMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>因为图片有文字特性，被分隔符分割了。<br>解决（1）：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;img src=&quot;fy.jpg&quot;&gt;&lt;img src=&quot;fy.jpg&quot;&gt;&lt;img src=&quot;fy.jpg&quot;&gt;&lt;img src=&quot;fy.jpg&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>解决（2）：<br>margin  元素和元素之间的空隙<br>img{<br>   margin-left:-6px;</p>
+<p>}<br>(不好)</p>
+<h2 id="怎么让ul的圆点改变"><a href="#怎么让ul的圆点改变" class="headerlink" title="怎么让ul的圆点改变"></a>怎么让ul的圆点改变</h2><p>标签选择器 初始化元素</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">ul</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">li</span>&gt;<span class="number">1</span>&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">   &lt;<span class="selector-tag">li</span>&gt;<span class="number">2</span>&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">   &lt;<span class="selector-tag">li</span>&gt;<span class="number">3</span>&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">ul</span>&gt;   </span><br><span class="line"><span class="selector-tag">ul</span>&#123;</span><br><span class="line">   <span class="attribute">list-style</span>:none;</span><br><span class="line">   <span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line">   <span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="通配符选择器可以初始化所有标签"><a href="#通配符选择器可以初始化所有标签" class="headerlink" title="通配符选择器可以初始化所有标签"></a>通配符选择器可以初始化所有标签</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">   <span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line">   <span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>权重为零。</p>
+<h2 id="盒子模型："><a href="#盒子模型：" class="headerlink" title="盒子模型："></a>盒子模型：</h2><p>margin+border+padding+（content=width+height）<br>外边距             内边距      内容区（宽 高）<br>盒子三大部分   ： 盒子壁  border     内边距 padding    盒子内容width+height</p>
+<h2 id="如何让里面盒子在外面盒子居中？"><a href="#如何让里面盒子在外面盒子居中？" class="headerlink" title="如何让里面盒子在外面盒子居中？"></a>如何让里面盒子在外面盒子居中？</h2><p>两个盒子的内容去一样的<br>外面盒子+padding=内容区</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;div class =&quot;wrapper&quot;&gt;</span><br><span class="line">       &lt;div class =&quot;content&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wrapper</span>&#123;</span><br><span class="line">     <span class="attribute">border</span>:<span class="number">10px</span> solid green;</span><br><span class="line">     <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">     <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">     <span class="attribute">background-color</span>:red;</span><br><span class="line">     <span class="attribute">padding</span>:<span class="number">100px</span>;</span><br><span class="line">  &#125;</span><br><span class="line"> <span class="selector-class">.content</span>&#123;</span><br><span class="line">   <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">   <span class="attribute">background-color</span>:black;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="padding-内边距"><a href="#padding-内边距" class="headerlink" title="padding:内边距"></a>padding:内边距</h2><p>四个值 ：上右下左<br>三个值 ：上（左右）下</p>
+<h2 id="如何做这种效果的盒子"><a href="#如何做这种效果的盒子" class="headerlink" title="如何做这种效果的盒子"></a>如何做这种效果的盒子</h2><p><img src="https://img-blog.csdnimg.cn/20210420233618422.png" alt="在这里插入图片描述"></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">                   &lt;div class=&quot;content1&quot;&gt;&lt;/div&gt;</span><br><span class="line">                &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">         &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content1</span>&#123;</span><br><span class="line">       <span class="attribute">height</span>:<span class="number">10px</span>;</span><br><span class="line">       <span class="attribute">width</span>:<span class="number">10px</span>;</span><br><span class="line">       <span class="attribute">background-color</span>:<span class="number">#0f0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span>&#123;</span><br><span class="line">      <span class="attribute">width</span>:<span class="number">10px</span>;</span><br><span class="line">      <span class="attribute">height</span>:<span class="number">10px</span>;</span><br><span class="line">      <span class="attribute">padding</span>:<span class="number">10px</span>;</span><br><span class="line">      <span class="attribute">background-color</span>:<span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">     <span class="attribute">width</span>:<span class="number">30px</span>;</span><br><span class="line">     <span class="attribute">height</span>:<span class="number">30px</span>;</span><br><span class="line">     <span class="attribute">background-color</span>:<span class="number">#0f0</span>;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wrapper</span>&#123;</span><br><span class="line">     <span class="attribute">width</span>:<span class="number">50px</span>;</span><br><span class="line">      <span class="attribute">height</span>:<span class="number">50px</span>;</span><br><span class="line">      <span class="attribute">background-color</span>:<span class="number">#000</span>;</span><br><span class="line">      <span class="attribute">padding</span>:<span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="定位技术-position"><a href="#定位技术-position" class="headerlink" title="定位技术 position"></a>定位技术 position</h1><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span>&gt;&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">   <span class="attribute">position</span>:absolute;</span><br><span class="line">   <span class="attribute">left</span>:<span class="number">100px</span>;</span><br><span class="line">   <span class="attribute">top</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="body有默认的margin-8px"><a href="#body有默认的margin-8px" class="headerlink" title="body有默认的margin 8px;"></a>body有默认的margin 8px;</h2><p><code>&lt;absolute&gt;</code>（脱离原来的层进入上一层）<br>1.脱离原来位置进行定位<br>最近的有定位的父级(包括父级的父级…..)进行定位<br>如果没有，那么相对于文档进行定位。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;relative&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.保留原来位置进行定位<br>相对自己原来位置定位</p>
+<p> relative 作为参照物<br> absolute 进行定位的</p>
+<h2 id="重点："><a href="#重点：" class="headerlink" title="重点："></a>重点：</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">       &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;box&quot;&gt; &lt;/div&gt;</span><br><span class="line">        &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wrapper</span>&#123;</span><br><span class="line">      <span class="attribute">margin-left</span>:<span class="number">100px</span>;</span><br><span class="line">       <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">       <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">       <span class="attribute">background-color</span>:black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span>&#123;</span><br><span class="line">          <span class="attribute">margin-left</span>:<span class="number">100px</span>;</span><br><span class="line">             <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">             <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">             <span class="attribute">background-color</span>:black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">       <span class="attribute">position</span>:absolute;</span><br><span class="line">       <span class="attribute">left</span>:<span class="number">50px</span>;</span><br><span class="line">        <span class="attribute">width</span>:<span class="number">50px</span>;</span><br><span class="line">        <span class="attribute">height</span>:<span class="number">50px</span>;</span><br><span class="line">        <span class="attribute">background-color</span>:yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>z-index<br>越大离我们越近</p>
+]]></content>
+      <categories>
+        <category>-css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css高级篇-包裹浮动元素</title>
+    <url>/2021/04/21/css%E9%AB%98%E7%BA%A7%E7%AF%87-%E5%8C%85%E8%A3%B9%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0/</url>
+    <content><![CDATA[<h2 id="用父级元素包裹浮动元素"><a href="#用父级元素包裹浮动元素" class="headerlink" title="用父级元素包裹浮动元素"></a>用父级元素包裹浮动元素</h2><p>让最后一个元素清除浮动<br>比如在css-3-居中五环，两个经典bug，BFC这篇博客最后，用p标签清除了浮动。</p>
+<h2 id="权重"><a href="#权重" class="headerlink" title="权重"></a>权重</h2><p>!important<br>行间样式<br>id<br>class|属性|伪类<br>标签|伪元素<br>通配符</p>
+<h2 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h2><p>伪元素存在于任意一个元素里面<br>任意一个元素有两个伪元素(逻辑最前，逻辑最后)  before after</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">span</span>&gt;</span><br><span class="line"> 很帅</span><br><span class="line">&lt;/<span class="selector-tag">span</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">span</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">   <span class="attribute">content</span>:<span class="string">&quot;成哥&quot;</span>; 伪元素内容，属于<span class="selector-tag">span</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">   <span class="attribute">content</span>:<span class="string">&quot;是的，的确这样&quot;</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>伪元素天生存在，虽然看不到，可以用css选择器选择。<br>content只能用于伪元素里面。<br>伪元素是行级元素，天生是 inline<br>要加 inline-block</p>
+<h2 id="用伪元素来清除浮动"><a href="#用伪元素来清除浮动" class="headerlink" title="用伪元素来清除浮动"></a>用伪元素来清除浮动</h2><p>能清楚浮动的必须是块级元素，所以要将伪元素设置块级元素。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">     <span class="attribute">content</span>:<span class="string">&quot;&quot;</span>;</span><br><span class="line">     <span class="attribute">clear</span>:both;</span><br><span class="line">     <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="把父级元素变成可以变成可以看到浮动元素的"><a href="#把父级元素变成可以变成可以看到浮动元素的" class="headerlink" title="把父级元素变成可以变成可以看到浮动元素的"></a>把父级元素变成可以变成可以看到浮动元素的</h2><p>position:absolute; float:left/right;<br>把内部把元素转换成inline-block;</p>
+<h2 id="文字环绕图片"><a href="#文字环绕图片" class="headerlink" title="文字环绕图片"></a>文字环绕图片</h2><p>图片设置浮动</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="attribute">float</span><span class="selector-pseudo">:left</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>-css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇博客</title>
+    <url>/2021/03/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>纵使结局不如意，遇见便是上上签。</p>
+]]></content>
+      <categories>
+        <category>-随笔</category>
+      </categories>
+  </entry>
+</search>
